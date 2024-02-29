@@ -6,12 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script src="param.js"></script>
 <body>
-	<form action="ParamServlet">
+	<form name="frm" action="ParamServlet">
 		아이디 : <input type="text" name="id" value="free"> <br>
 		암&nbsp;&nbsp;호 : <input type="password" name="pass" value="1234"> <br>
 		
-		<input type="submit" value="로그인">
+		<input type="submit" value="로그인" onclick="return check()">
 	</form>
 </body>
 </html>
