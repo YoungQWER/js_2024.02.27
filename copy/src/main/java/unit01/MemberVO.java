@@ -23,5 +23,6 @@ public class MemberVO {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}	
+	}
+
 }
