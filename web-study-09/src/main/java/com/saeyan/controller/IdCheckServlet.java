@@ -1,6 +1,8 @@
 package com.saeyan.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +22,12 @@ public class IdCheckServlet extends HttpServlet {
 		MemberDAO mDao = MemberDAO.getInstance();
 		
 		int result = mDao.confirmID(userid);  //중복체크메소드 호출
+
+		request.setAttribute("userid", userid);
+		request.setAttribute("result", result);
 		
-		System.out.println("중복이니 ?  " +result);
+		RequestDispatcher dis = request.getRequestDispatcher("member/idcheck.jsp");
+		dis.forward(request, response);
 		
 	}
 

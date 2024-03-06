@@ -28,3 +28,9 @@ function idCheck(){    //중복체크
 	let url = "idCheck.do?userid=" + document.frm.userid.value;
 	window.open(url, "_blank_1", "width=450, height=200")
 }
+
+function idok(){
+	opener.frm.userid.value = document.frm.userid.value;
+	opener.frm.reid.value = document.frm.userid.value;
+	self.close();
+}
