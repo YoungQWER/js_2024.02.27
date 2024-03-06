@@ -31,7 +31,7 @@
 			
 			//3. sql구문 전송 및 실행 결과를 rs참조
 			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql);
+			rs = stmt.executeQuery(sql);  //select 쿼리문 실행, ResultSet에 값을 저장
 			
 			//4. 데이터 베이스 값 출력
 			
