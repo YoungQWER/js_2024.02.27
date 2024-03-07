@@ -20,7 +20,7 @@ import lombok.ToString;
 @ToString
 public class MemberVO {
 	String name;
-	String useid;
+	String userid;
 	String pwd;
 	String email;
 	String phone;

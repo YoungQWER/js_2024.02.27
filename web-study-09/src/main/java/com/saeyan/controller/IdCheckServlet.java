@@ -22,7 +22,7 @@ public class IdCheckServlet extends HttpServlet {
 		MemberDAO mDao = MemberDAO.getInstance();
 		
 		int result = mDao.confirmID(userid);  //중복체크메소드 호출
-
+		
 		request.setAttribute("userid", userid);
 		request.setAttribute("result", result);
 		
