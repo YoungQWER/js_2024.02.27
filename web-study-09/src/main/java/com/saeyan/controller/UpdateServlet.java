@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.saeyan.dao.MemberDAO;
 import com.saeyan.dto.MemberVO;
@@ -56,5 +57,4 @@ public class UpdateServlet extends HttpServlet {
 		
 		response.sendRedirect("login.do");
 	}
-
 }
