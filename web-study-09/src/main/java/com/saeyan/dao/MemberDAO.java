@@ -34,7 +34,7 @@ public class MemberDAO {
 		return DriverManager.getConnection(url, user, password);
 	}
 
-	//ID중복체크 
+	//ID중복체크
 	public int confirmID(String userid) {
 		
 		int result = -1;
@@ -105,7 +105,7 @@ public class MemberDAO {
 		return result;
 	}
 
-	//가입회원 체크
+	//가입회원 체크 *
 	public int userCheck(String userid, String pwd) {
 		int result = -1;
 		
@@ -142,7 +142,7 @@ public class MemberDAO {
 		return result;
 	}
 
-	//로그인 한 회원정보 가져오기
+	//로그인 한 회원정보 가져오기 *
 	public MemberVO getMember(String userid) {
 		String sql = "select * from member where userid=?";
 		MemberVO vo = new MemberVO();
