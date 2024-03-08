@@ -25,7 +25,7 @@
 		
 		
 			<tr>
-				<td colspan="2" > 마이페이지</td>
+				<td colspan="2" > ${mVo} 마이페이지</td>
 			</tr>
 			<tr>
 				<td >아이디</td>
