@@ -178,3 +178,4 @@ Caused by: java.lang.ClassNotFoundException: org.apache.el.util.JreCompat cannot
 	... 58 common frames omitted
 2024-03-11 16:45:11,495 [Framework stop - Equinox Container: a6b7d131-9fb7-406f-8a65-1fdf5403b938] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@6ca87818{STOPPING}[12.0.3,sto=0]
 2024-03-11 16:45:11,498 [Framework stop - Equinox Container: a6b7d131-9fb7-406f-8a65-1fdf5403b938] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@7a2de9b4{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2024-03-11 16:45:22,403 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
