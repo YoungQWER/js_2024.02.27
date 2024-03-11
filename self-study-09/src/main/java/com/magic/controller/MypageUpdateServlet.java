@@ -19,15 +19,15 @@ public class MypageUpdateServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String id = request.getParameter("id");
-		
-		EmployeesDAO mDao = EmployeesDAO.getInstance();
-		
-		EmployeesVO vo = mDao.getEmployees(id);
-		HttpSession session = request.getSession();
-		if(session != null){
-			session.setAttribute("mVo", vo);
-		}
+//		String id = request.getParameter("id");
+//		
+//		EmployeesDAO mDao = EmployeesDAO.getInstance();
+//		
+//		EmployeesVO vo = mDao.getEmployees(id);
+//		HttpSession session = request.getSession();
+//		if(session != null){
+//			session.setAttribute("mVo", vo);
+//		}
 		
 		request.getRequestDispatcher("employees/mypageUpdate.jsp").forward(request, response);
 	}

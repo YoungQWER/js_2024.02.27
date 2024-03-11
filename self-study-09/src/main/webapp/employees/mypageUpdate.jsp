@@ -25,33 +25,33 @@
 		
 		
 			<tr>
-				<td colspan="2" > ${mVo} 마이페이지</td>
+				<td colspan="2" > ${loginUser} 마이페이지</td>
 			</tr>
 			<tr>
 				<td >아이디</td>
-				<td><input type="text" name="id" value="${mVo.id}"></td>
+				<td><input type="text" name="id" value="${loginUser.id}"></td>
 			</tr>
 			<tr>
 				<td >비밀번호</td>
-				<td><input type="password" name="pass" value="${mVo.pass}"></td>
+				<td><input type="password" name="pass" value="${loginUser.pass}"></td>
 			</tr>
 			<tr>
 				<td >이름</td>
-				<td><input type="text" name="name" value="${mVo.name}"></td>
+				<td><input type="text" name="name" value="${loginUser.name}"></td>
 			</tr>
 			<tr>
 				<td >권한</td>
-				<td><select name="admin" value="${mVo.lev}">
+				<td><select name="admin" value="${loginUser.lev}">
 						<option value = "A">운영자</option>
 						<option value = "B">일반회원</option>
 					</select></td>
 			<tr>
 				<td >성별</td>
-				<td><input type="text" name="gender" value="${mVo.gender}"></td>
+				<td><input type="text" name="gender" value="${loginUser.gender}"></td>
 			</tr>
 			<tr>
 				<td >전화번호</td>
-				<td><input type="text" name="phone" value="${mVo.phone}"></td>
+				<td><input type="text" name="phone" value="${loginUser.phone}"></td>
 			</tr>
 
 			<tr>
