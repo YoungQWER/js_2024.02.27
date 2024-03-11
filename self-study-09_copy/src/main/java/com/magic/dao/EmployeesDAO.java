@@ -113,14 +113,14 @@ public class EmployeesDAO {
 		String sql = "update EMPLOYEES set pass=?, name=?, lev=?, gender=? "
 				+ ", phone=? where id=?";
 		int result = -1;
-	
+
 		try {
 			con = getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getPass());
 			pstmt.setString(2, vo.getName());
 			pstmt.setString(3, vo.getLev());
-			pstmt.setString(4, String.valueOf(vo.getGender()));  //String.valueOf 는 "" + 같다
+			pstmt.setString(4, String.valueOf(vo.getGender()));
 			pstmt.setString(5, vo.getPhone());
 			pstmt.setString(6, vo.getId());
 			
@@ -138,6 +138,33 @@ public class EmployeesDAO {
 		}
 		
 		return result; 
+	}
+
+	public void insertEmployee(EmployeesVO vo) {
+		String sql = "insert into employees(id,pass,name,lev,enter,gender,phone) "
+				+ "values(?,?,?,?,sysdate,?,?)";
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPass());
+			pstmt.setString(3, vo.getName());
+			pstmt.setString(4, vo.getLev());
+			pstmt.setString(5, "" + vo.getGender()); //1 ==> "1"
+			pstmt.setString(6, vo.getPhone());
+			
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if( pstmt != null) pstmt.close();
+				if( con != null) con.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 }
 

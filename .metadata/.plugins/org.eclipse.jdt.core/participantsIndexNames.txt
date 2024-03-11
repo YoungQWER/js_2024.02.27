@@ -21,6 +21,8 @@ C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1170872279.ind
 \self-study-09_copy\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2214495818.index
 \web-study-09\src\main\java
+C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\623349836.index
+\self-study-09_copy\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3012210575.index
 \web-study-02\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3166068904.index
