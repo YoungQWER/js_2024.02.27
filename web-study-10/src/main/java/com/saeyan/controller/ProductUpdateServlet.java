@@ -47,7 +47,7 @@ public class ProductUpdateServlet extends HttpServlet {
 		String name = multi.getParameter("name");
 		String description = multi.getParameter("description");
 		String price = multi.getParameter("price");
-		String pictureUrl = multi.getFilesystemName("pictureUrl");     //혼자만 FilesystemName
+		String pictureUrl = multi.getFilesystemName("pictureUrl");     //업로드 파일 FilesystemName
  
 		//기존 이미지 그대로 사용
 		if(pictureUrl == null) {                              

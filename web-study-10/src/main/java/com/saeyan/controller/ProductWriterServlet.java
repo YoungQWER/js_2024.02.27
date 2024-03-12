@@ -45,7 +45,7 @@ public class ProductWriterServlet extends HttpServlet {
 		String name = multi.getParameter("name");
 		int price = Integer.parseInt(multi.getParameter("price"));
 		String description = multi.getParameter("description");
-		String pictureUrl = multi.getFilesystemName("pictureUrl");
+		String pictureUrl = multi.getFilesystemName("pictureUrl");       //업로드 파일 FilesystemName
 		
 		ProductVO vo = new ProductVO();
 		vo.setName(name);
