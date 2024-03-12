@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 public class DBManager {
 	
-	public static Connection getConnection() {
+	public static Connection getConnection() {           //Connection 객체 얻기, try,catch문 
 		Connection con = null;
 		
 		try {

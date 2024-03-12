@@ -20,6 +20,7 @@ public class ProductDAO {
 		return instance;
 	}
 	
+	//값을 배열에 넣어서 전달
 	public List<ProductVO> selectAllProudcts(){
 		
 		String sql = "select * from product order by code desc";
@@ -57,6 +58,7 @@ public class ProductDAO {
 		return list;
 	}
 	
+	//값을 전달
 	public void insertProduct(ProductVO vo) {
 		String sql = "insert into product values(product_seq.nextval, ?,?,?,?)";
 		Connection con = null;
@@ -88,6 +90,7 @@ public class ProductDAO {
 		return 0;
 	}
 	
+	//code값 
 	public ProductVO selectProductByCode(int code) {
 		
 		String sql = "select * from product where code = ?";
