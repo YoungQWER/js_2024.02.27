@@ -24,8 +24,9 @@ public class ActionFactory {
 			action = new BoardWriteActionForm();
 		}else if(command.equals("board_write")) {
 			action = new BoardWriteAction();
-		}
-		
+		}else if(command.equals("board_view")) {
+			action = new BoardViewAction();
+		}		
 		
 		return action;
 	}

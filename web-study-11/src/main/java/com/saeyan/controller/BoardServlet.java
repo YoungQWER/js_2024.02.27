@@ -17,17 +17,19 @@ public class BoardServlet extends HttpServlet {
     
 	
 	//BoardServlet?command=board_list => 요청이 전달됨
+	//BoardServlet?command=board_view&num=${board.num}   값이 두개
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String command = request.getParameter("command");
+//		String num = request.getParameter("num");
 		
 		ActionFactory af = ActionFactory.getInstance();
 		
-		Action action=  af.getAction(command);
+		Action action =  af.getAction(command);
 		
 		if(action != null) {
-			action.execute(request, response);           //1. BoardListAction >> execute
-		}
+			action.execute(request, response);           //1. BoardListAction >> 
+		}																
 		
 	}
 

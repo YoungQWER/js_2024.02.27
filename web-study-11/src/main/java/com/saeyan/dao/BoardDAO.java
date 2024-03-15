@@ -94,7 +94,7 @@ public class BoardDAO {
 		return list;
 	}
 	
-	public BoardVO selectBoardByNum(int num){
+public BoardVO selectBoardByNum(int num){
 		
 		BoardVO vo  = new BoardVO();
 		Connection con = null;
