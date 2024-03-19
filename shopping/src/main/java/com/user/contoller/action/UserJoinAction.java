@@ -25,6 +25,7 @@ public class UserJoinAction implements Action {
 		String admincheck = request.getParameter("admincheck");
  		
 		UserVO vo = new UserVO();
+		
 
 		vo.setId(id);
 		vo.setPwd(pwd);

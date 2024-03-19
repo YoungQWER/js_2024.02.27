@@ -22,11 +22,13 @@ public class ActionFactory {
 			action = new UserJoinForm();
 		}else if(command.equals("user_join")) {
 			action = new UserJoinAction();
+		}else if(command.equals("nonuser_join_form")) {
+			action = new NonUserJoinForm();
+		}else if(command.equals("nonuser_join")) {
+			action = new NonUserJoinAction();
 		}
 		
-			
 		
-			
 		return action;
 	
 	}

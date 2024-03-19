@@ -26,6 +26,20 @@ public class UserLoginAction implements Action {
 		
 		UserVO vo = uDao.getUser(id);
 		
+		if(result  == 1) {
+			
+			session.setAttribute("id", vo);
+			
+			request.setAttribute("message", "로그인 성공했습니다.");
+			url = "user/main.jsp";
+		}else if(result == 0) {
+			request.setAttribute("message", "존재하지 않는 회원입니다.");
+		}else if(result == -1) {
+			request.setAttribute("message", "비밀번호가 맞지 않습니다.");
+		}
+		
+		request.getRequestDispatcher(url)
+			.forward(request, response);
 	}
 
 }
