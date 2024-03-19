@@ -127,7 +127,7 @@ public class UserDAO {
 		return result;
 	}
 	
-	//로그인 한 회원정보 가져오기 *
+	//로그인 한 회원정보 가져오기
 	public UserVO getUser(String userid) {
 		String sql = "select * from member where userid=?";
 		UserVO vo = new UserVO();

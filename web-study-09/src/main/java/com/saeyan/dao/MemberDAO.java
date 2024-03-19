@@ -72,7 +72,7 @@ public class MemberDAO {
 		return result;
 	}
 
-	//회원가입
+	//회원가입 *
 	public int insertMember(MemberVO vo) {
 		int result = -1;
 		

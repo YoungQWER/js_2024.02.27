@@ -23,7 +23,7 @@
 				<input type="submit" value="로그인" onclick="return loginCheck()">&nbsp;&nbsp; 
 				<input  type="reset" value="취소"> &nbsp;&nbsp; 
 				<input type="button" value="회원 가입" onclick="location.href='CommandServlet?command=user_join_form'">
-				<input type="button" value="비회원 구매" onclick="location.href=''">
+				<input type="button" value="비회원 구매" onclick="location.href='CommandServlet?command=nonuser_join_form'">
 				</td>
 			</tr>
 			<tr>

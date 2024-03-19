@@ -9,7 +9,7 @@
 <body>
    <h2>회원 가입</h2>
    '*' 표시 항목은 필수 입력 항목입니다.
-   <form method="post" name="frm">
+   <form action="user/login.jsp" method="post" name="frm">
       <table border="1">
          <tr>
             <td>아이디</td>
