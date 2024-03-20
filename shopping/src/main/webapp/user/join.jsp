@@ -10,7 +10,8 @@
 <body>
    <h2>회원 가입</h2>
    '*' 표시 항목은 필수 입력 항목입니다.
-   <form action="CommandServlet?command=user_login" method="post" name="frm">
+   <form action="CommandServlet" method="post" name="frm">
+   	<input type="hidden" name="command" value="user_join">
       <table border="1">
          <tr>
             <td>아이디</td>
@@ -55,7 +56,7 @@
             </td>
          </tr>
          <tr>
-            <td colspan="2">${message }</td>
+            <td colspan="2">${message}</td>
          </tr>
       </table>
    </form>

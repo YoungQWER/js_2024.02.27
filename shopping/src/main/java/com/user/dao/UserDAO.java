@@ -9,6 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.user.dto.NonUserVO;
 import com.user.dto.UserVO;
 
 public class UserDAO {
@@ -90,11 +91,36 @@ public class UserDAO {
 		return result;
 	}
 	
+	//비회원
+	public int nonUserjoin(NonUserVO vo) {
+		int result = -1;
+		
+		String sql = "insert into nonuser values(?,?)";
+
+		try {
+			con = getConnection();			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, vo.getPhone());
+			pstmt.setString(2, vo.getEmail());
+			
+			result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
 	//아이디 체크
 	public int idCheck(String id, String pwd) {
 		int result = -1;
 		
-		String sql = "select pwd from member where id = ? ";
+		String sql = "select pwd from users where id = ? ";
 		
 		try {
 			con = getConnection();
@@ -129,7 +155,8 @@ public class UserDAO {
 	
 	//로그인 한 회원정보 가져오기
 	public UserVO getUser(String userid) {
-		String sql = "select * from member where userid=?";
+		
+		String sql = "select * from users where id=?";
 		UserVO vo = new UserVO();
 		
 		try {

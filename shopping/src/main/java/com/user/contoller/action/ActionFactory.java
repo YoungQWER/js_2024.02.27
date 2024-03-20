@@ -30,6 +30,10 @@ public class ActionFactory {
 			action = new IdCheck();
 		}else if(command.equals("idcheck_form")) {
 			action = new IdCheckForm();
+		}else if(command.equals("main")) {
+			action = new main();
+		}else if(command.equals("main_form")) {
+			action = new mainForm();
 		}
 		
 		

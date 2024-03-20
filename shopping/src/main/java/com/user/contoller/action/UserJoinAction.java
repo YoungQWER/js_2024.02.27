@@ -25,7 +25,6 @@ public class UserJoinAction implements Action {
 		String admincheck = request.getParameter("admincheck");
  		
 		UserVO vo = new UserVO();
-		
 
 		vo.setId(id);
 		vo.setPwd(pwd);
@@ -36,8 +35,11 @@ public class UserJoinAction implements Action {
 		vo.setNickname(nickname);
 		vo.setAdmincheck(admincheck);		
 		
+		
 		UserDAO uDao = UserDAO.getInstance();
 		int result = uDao.join(vo);
+		
+		System.out.println("vo : " + vo);
 		
 		HttpSession session = request.getSession();
 		

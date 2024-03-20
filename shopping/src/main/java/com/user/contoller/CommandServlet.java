@@ -19,6 +19,8 @@ public class CommandServlet extends HttpServlet {
 		
 		String command = request.getParameter("command");
 		
+		System.out.println(" CommandServlet : " + command);
+		
 		ActionFactory af = ActionFactory.getInstance();
 		
 		Action action = af.getAciton(command);

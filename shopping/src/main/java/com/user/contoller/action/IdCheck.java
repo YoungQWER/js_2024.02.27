@@ -23,10 +23,10 @@ public class IdCheck implements Action {
 		
 		request.setAttribute("id", id);
 		request.setAttribute("result", result);
-		System.out.println("id :" + id);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("user/idcheck.jsp");
 		dis.forward(request, response);
+		
 	}
 
 }

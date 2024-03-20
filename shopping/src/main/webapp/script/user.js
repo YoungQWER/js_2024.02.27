@@ -26,10 +26,10 @@ function idCheck(){
 	}
 	
 	//idCheck.do?id=id
-	let url = "user/idcheck.jsp?id=" + document.frm.id.value;
+	let url = "CommandServlet?command=idcheck&id=" + document.frm.id.value;
 	window.open(url, "_blank_1", "width=450, height=200");
-	
 }
+
 	//reid 가 중복체크를 했나 확인
 function idok(){
 	opener.frm.id.value = document.frm.id.value;
@@ -70,12 +70,12 @@ function joinCheck(){
 		document.frm.pwd.focus();
 		return false;
 	}
-	
+
 	if(document.frm.reid.value.length==0){
 		alert("중복 체크를 하지 않았습니다.");
 		frm.id.focus();
 		return false;	
 	}
-	
+
 	return true;
 }

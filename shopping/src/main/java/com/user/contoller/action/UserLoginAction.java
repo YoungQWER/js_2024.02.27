@@ -18,18 +18,19 @@ public class UserLoginAction implements Action {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		
+//		System.out.println("id : " + id);
+//		System.out.println("pwd : " + pwd);
 		UserDAO uDao = UserDAO.getInstance();
-		String url = "CommandServlet?command=user_login";
-		
+		String url = "CommandServlet?command=user_login_form";
+
 		int result = uDao.idCheck(id, pwd);
+//		System.out.println("result : " + result);
 		HttpSession session = request.getSession();
-		
+
 		UserVO vo = uDao.getUser(id);
 		
 		if(result  == 1) {
-			
-			session.setAttribute("id", vo);
-			
+			session.setAttribute("userList", vo);
 			request.setAttribute("message", "로그인 성공했습니다.");
 			url = "user/main.jsp";
 		}else if(result == 0) {
@@ -40,6 +41,7 @@ public class UserLoginAction implements Action {
 		
 		request.getRequestDispatcher(url)
 			.forward(request, response);
+//		response.sendRedirect(url);
 	}
 
 }

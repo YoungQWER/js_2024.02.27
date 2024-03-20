@@ -8,16 +8,17 @@
 <script type="text/javascript" src="script/user.js"></script>
 </head>
 <body>
-	<h2>로그인</h2>
-	<form action="user/main.jsp" method="post" name="frm">
+	<h2>로그인</h2> 
+	<form action="CommandServlet" method="post" name="frm">
+		<input type="hidden" name="command" value="user_login">
 		<table>
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="userid" value="${id}"></td>
+				<td><input type="text" name="id"  value="user"></td>
 			</tr>
 			<tr>
 				<td>암 호</td>
-				<td><input type="password" name="pwd"></td>
+				<td><input type="password" name="pwd" value="user"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

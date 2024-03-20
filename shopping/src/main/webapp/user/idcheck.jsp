@@ -10,7 +10,8 @@
 </head>
 <body>
 	<h2>아이디 중복 체크</h2>
-	<form action="" method="get" name="frm">
+	<form action="CommandServlet" method="get" name="frm">
+		<input type="hidden" name="command" value="idcheck">
 		아이디 <input type="text" name="id" value="${id}">
 			<input type="submit" value="중복 체크">
 			
