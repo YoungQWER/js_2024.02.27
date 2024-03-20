@@ -14,11 +14,11 @@
 		<table>
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="id"  value="user"></td>
+				<td><input type="text" name="id"></td>
 			</tr>
 			<tr>
 				<td>암 호</td>
-				<td><input type="password" name="pwd" value="user"></td>
+				<td><input type="password" name="pwd"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
