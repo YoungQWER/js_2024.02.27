@@ -26,6 +26,10 @@ public class ActionFactory {
 			action = new NonUserJoinForm();
 		}else if(command.equals("nonuser_join")) {
 			action = new NonUserJoinAction();
+		}else if(command.equals("idcheck")) {
+			action = new IdCheck();
+		}else if(command.equals("idcheck_form")) {
+			action = new IdCheckForm();
 		}
 		
 		

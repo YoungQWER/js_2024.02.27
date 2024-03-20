@@ -47,8 +47,8 @@ public class UserJoinAction implements Action {
 		}else {
 			request.setAttribute("message", "회원가입에 실패했습니다.");
 		}
-	
-		request.getRequestDispatcher("user/login.jsp")
+		
+		request.getRequestDispatcher("CommandServlet?command=user_login")
 			.forward(request, response);
 		
 	}

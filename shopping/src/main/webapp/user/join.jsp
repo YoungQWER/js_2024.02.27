@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="script/user.js"></script>
 </head>
 <body>
    <h2>회원 가입</h2>
    '*' 표시 항목은 필수 입력 항목입니다.
-   <form action="user/login.jsp" method="post" name="frm">
+   <form action="CommandServlet?command=user_login" method="post" name="frm">
       <table border="1">
          <tr>
             <td>아이디</td>

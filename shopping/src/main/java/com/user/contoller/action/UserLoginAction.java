@@ -19,7 +19,7 @@ public class UserLoginAction implements Action {
 		String pwd = request.getParameter("pwd");
 		
 		UserDAO uDao = UserDAO.getInstance();
-		String url = "user/login.jsp";
+		String url = "CommandServlet?command=user_login";
 		
 		int result = uDao.idCheck(id, pwd);
 		HttpSession session = request.getSession();

@@ -5,14 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="script/user.js"></script>
 </head>
 <body>
 	<h2>로그인</h2>
-	<form action="CommandServlet" method="post" name="frm">
+	<form action="user/main.jsp" method="post" name="frm">
 		<table>
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="userid" value="${userid}"></td>
+				<td><input type="text" name="userid" value="${id}"></td>
 			</tr>
 			<tr>
 				<td>암 호</td>
@@ -20,9 +21,8 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-				<input type="submit" value="로그인" onclick="return loginCheck()" location.href="CommandServlet?command=user_login_form >&nbsp;&nbsp;
-			<!-- <input type="submit" value="로그인" onclick="return loginCheck()">&nbsp;&nbsp;
-			 -->	<input  type="reset" value="취소"> &nbsp;&nbsp;
+				<input type="submit" value="로그인" onclick="return loginCheck()">
+			 	<input type="reset" value="취소">
 				<input type="button" value="회원 가입" onclick="location.href='CommandServlet?command=user_join_form'">
 				<input type="button" value="비회원 구매" onclick="location.href='CommandServlet?command=nonuser_join_form'">
 				</td>

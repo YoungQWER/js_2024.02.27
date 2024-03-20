@@ -11,7 +11,7 @@ public class UserJoinForm implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("user/join.jsp").forward(request, response);
+		request.getRequestDispatcher("/user/join.jsp").forward(request, response);
 	}
 
 }

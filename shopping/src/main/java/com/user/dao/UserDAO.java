@@ -166,7 +166,38 @@ public class UserDAO {
 		
 		return vo;
 	}
-
+	
+	//ID 중복체크
+	public int confirmID(String id) {
+		int result = -1;
+		
+		String sql = "select id from users where id = ?";
+		
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = 1;  //사용 가능
+			}else {
+				result = -1; //사용 불가
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 
 	
 	

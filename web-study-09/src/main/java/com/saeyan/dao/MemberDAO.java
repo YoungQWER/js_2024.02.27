@@ -34,7 +34,7 @@ public class MemberDAO {
 		return DriverManager.getConnection(url, user, password);
 	}
 
-	//ID중복체크
+	//ID중복체크 *
 	public int confirmID(String userid) {
 		
 		int result = -1;
