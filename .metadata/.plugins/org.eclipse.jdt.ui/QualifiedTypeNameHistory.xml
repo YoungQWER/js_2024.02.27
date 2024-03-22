@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="com.magic.dao.EmployeesVO"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="com.user.dto.NonUserVO"/>
     <fullyQualifiedTypeName name="com.user.dto.UserVO"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.seayan.dto.ShoppingMallVO"/>
 </qualifiedTypeNameHistroy>

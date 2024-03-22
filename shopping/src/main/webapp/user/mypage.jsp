@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>마이페이지</h1>
-	<form action="CommandServlets" method="post" name="address">
+	<form action="CommandServlet" method="post" name="address">
 	<input type="hidden" name="command" value="mypage">
 		<table border="1">
 			<tr>

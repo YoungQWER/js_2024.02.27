@@ -32,6 +32,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\java\Jsp\Shopping_download"/>
+			<item value="C:\java\Jsp\Shoppingmall"/>
 			<item value="C:\java\Jsp\jsp-study-10"/>
 			<item value="C:\Users\9\Desktop\self-study-10"/>
 			<item value="C:\Users\9\Downloads\self-study-10"/>
