@@ -9,6 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.user.dto.AddressVO;
 import com.user.dto.NonUserVO;
 import com.user.dto.UserVO;
 
@@ -59,7 +60,7 @@ public class UserDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}	
+	}
 	
 	public int join(UserVO vo) {
 		int result = -1;
@@ -69,14 +70,42 @@ public class UserDAO {
 		try {
 			con = getConnection();			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, vo.getId());
+			pstmt.setString(1, vo.getUserid());
 			pstmt.setString(2, vo.getPwd());
 			pstmt.setString(3, vo.getUsername());
 			pstmt.setString(4, vo.getEmail());
 			pstmt.setInt(5, vo.getPhone());
 			pstmt.setInt(6, vo.getJumin());
 			pstmt.setString(7, vo.getNickname());
-			pstmt.setString(8, vo.getAdmincheck());
+			pstmt.setString(8, vo.getAdminCheck());
+			
+			
+			result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
+	public int addressinsert(AddressVO vo) {
+
+		int result = -1;
+		
+	String sql = "insert into address values(userid, addressid, username, adminCheck, nickname, "
+				+ "nickname,?,?,?)";
+				
+		try {
+			con = getConnection();			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(6, vo.getAddress());
+			pstmt.setString(7, vo.getAddressDetail());
+			pstmt.setString(8, vo.getDeliveryRequest());
 			
 			result = pstmt.executeUpdate();
 		}catch(Exception e) {
@@ -120,7 +149,7 @@ public class UserDAO {
 	public int idCheck(String id, String pwd) {
 		int result = -1;
 		
-		String sql = "select pwd from users where id = ? ";
+		String sql = "select pwd from users where userid = ? ";
 		
 		try {
 			con = getConnection();
@@ -156,7 +185,7 @@ public class UserDAO {
 	//로그인 한 회원정보 가져오기
 	public UserVO getUser(String userid) {
 		
-		String sql = "select * from users where id=?";
+		String sql = "select * from users where userid=?";
 		UserVO vo = new UserVO();
 		
 		try {
@@ -170,13 +199,13 @@ public class UserDAO {
 				String username = rs.getString("username");
 				
 				vo.setUsername(username);
-				vo.setId(rs.getString("id"));
+				vo.setUserid(rs.getString("userid"));
 				vo.setPwd(rs.getString("pwd"));
 				vo.setEmail(rs.getString("email"));
 				vo.setPhone(Integer.parseInt(rs.getString("phone")));
 				vo.setJumin(Integer.parseInt(rs.getString("jumin")));
 				vo.setNickname(rs.getString("nickname"));
-				vo.setAdmincheck(rs.getString("admincheck"));
+				vo.setAdminCheck(rs.getString("admincheck"));
 			}
 			
 		}catch(Exception e) {
@@ -198,7 +227,7 @@ public class UserDAO {
 	public int confirmID(String id) {
 		int result = -1;
 		
-		String sql = "select id from users where id = ?";
+		String sql = "select userid from users where userid = ?";
 		
 		try {
 			con = getConnection();

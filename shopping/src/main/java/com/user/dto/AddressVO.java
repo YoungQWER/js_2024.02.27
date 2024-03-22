@@ -5,31 +5,29 @@ import lombok.Setter;
 import lombok.ToString;
 
 /*
-CREATE TABLE address (
-		addressKey INT,
-		userKey INT,
-		nonUserKey INT,
-		userCheck VARCHAR(1),
-		name VARCHAR(20),
+ CREATE TABLE address (
+		userid VARCHAR(20),
+        addressid VARCHAR(20),
+		username VARCHAR(20),
+		adminCheck VARCHAR(1),
+		nickname VARCHAR(20),
 		address VARCHAR(100),
 		addressDetail VARCHAR(50),
-		request VARCHAR(200),
-		defaultKey VARCHAR(1)
-	);
+		deliveryRequest VARCHAR(200)
+     );
 */
 @Setter
 @Getter
 @ToString
 public class AddressVO {
 		
-	private int addressKey;
-	private int userKey;
-	private int nonUserKey;
-	private String userCheck;
-	private String name;
+	private String userid;
+	private String addressid;
+	private String username;
+	private String adminCheck;
+	private String nickname;
 	private String address;
 	private String addressDetail;
-	private String request;
-	private String defaultKey;
+	private String deliveryRequest;
 
 }

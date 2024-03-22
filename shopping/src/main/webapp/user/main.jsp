@@ -8,6 +8,8 @@
 </head>
 <body>
 <h1>메인</h1>
-<h1>환영합니다 ${id}${email}님</h1>
+<h1>${id}님</h1>
+<input type="submit" value="마이페이지" onclick="location.href='CommandServlet?command=mypage_form'"><br>
+<input type="submit" value="교환&환불" onclick="location.href='CommandServlet?command=refund_form'">
 </body>
 </html>

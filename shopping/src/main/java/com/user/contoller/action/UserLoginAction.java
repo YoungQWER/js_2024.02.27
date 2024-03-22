@@ -25,12 +25,16 @@ public class UserLoginAction implements Action {
 
 		int result = uDao.idCheck(id, pwd);
 //		System.out.println("result : " + result);
+
 		HttpSession session = request.getSession();
 
 		UserVO vo = uDao.getUser(id);
+		System.out.println("vo :" + vo);
+		System.out.println("result : " + result);		
 		
 		if(result  == 1) {
 			session.setAttribute("userList", vo);
+			session.setAttribute("id", id);
 			request.setAttribute("message", "로그인 성공했습니다.");
 			url = "user/main.jsp";
 		}else if(result == 0) {

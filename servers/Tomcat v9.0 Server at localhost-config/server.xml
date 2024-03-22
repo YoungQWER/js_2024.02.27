@@ -111,12 +111,9 @@
 			
 
 			
-			<Context docBase="shopping" path="/shopping" reloadable="true" source="org.eclipse.jst.jee.server:shopping">
-			<Resource name="jdbc/myoracle" auth="Container"
-              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-              username="ezen" password="1234" maxTotal="20" maxIdle="10"
-              maxWaitMillis="-1"/>
+			
+			<Context docBase="shopping" path="/" reloadable="false" source="org.eclipse.jst.jee.server:shopping">
+			<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="ezen"/>
 			</Context>
 			</Host>
 		</Engine>

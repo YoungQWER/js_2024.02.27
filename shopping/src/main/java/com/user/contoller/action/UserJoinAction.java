@@ -23,28 +23,26 @@ public class UserJoinAction implements Action {
 		int jumin = Integer.parseInt(request.getParameter("jumin"));
 		String nickname = request.getParameter("nickname");
 		String admincheck = request.getParameter("admincheck");
- 		
+		
 		UserVO vo = new UserVO();
 
-		vo.setId(id);
+		vo.setUserid(id);
 		vo.setPwd(pwd);
 		vo.setUsername(username);
 		vo.setEmail(email);
 		vo.setPhone(phone);
 		vo.setJumin(jumin);
 		vo.setNickname(nickname);
-		vo.setAdmincheck(admincheck);		
-		
+		vo.setAdminCheck(admincheck);	
 		
 		UserDAO uDao = UserDAO.getInstance();
 		int result = uDao.join(vo);
 		
-		System.out.println("vo : " + vo);
-		
+		System.out.println("result : " + result);
 		HttpSession session = request.getSession();
 		
 		if(result == 1) {
-			session.setAttribute("id", id);
+			session.setAttribute("userid", id);
 			request.setAttribute("message", "회원가입에 성공했습니다.");
 		}else {
 			request.setAttribute("message", "회원가입에 실패했습니다.");

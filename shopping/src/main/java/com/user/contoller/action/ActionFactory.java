@@ -27,13 +27,21 @@ public class ActionFactory {
 		}else if(command.equals("nonuser_join")) {
 			action = new NonUserJoinAction();
 		}else if(command.equals("idcheck")) {
-			action = new IdCheck();
+			action = new IdCheckAction();
 		}else if(command.equals("idcheck_form")) {
 			action = new IdCheckForm();
 		}else if(command.equals("main")) {
-			action = new main();
+			action = new MainAction();
 		}else if(command.equals("main_form")) {
-			action = new mainForm();
+			action = new MainForm();
+		}else if(command.equals("mypage")) {
+			action = new MypageAction();
+		}else if(command.equals("mypage_form")) {
+			action = new Mypageform();
+		}else if(command.equals("refund")) {
+			action = new RefundAction();
+		}else if(command.equals("refund_form")) {
+			action = new Refundform();
 		}
 		
 		
