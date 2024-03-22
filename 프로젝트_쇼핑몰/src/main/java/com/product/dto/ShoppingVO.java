@@ -19,8 +19,7 @@ public class ShoppingVO {
 	private int productStock;
 	private String productDescription;
 	private java.sql.Timestamp productdate;
-	
-	
+
 }
 	
 	

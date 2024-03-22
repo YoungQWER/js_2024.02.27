@@ -26,6 +26,7 @@ public class productview implements Action {
 	
 	request.setAttribute("product", vo);
 	
+	
 	String url = "Shopping/productview.jsp";
 	
 	request.getRequestDispatcher(url).forward(request, response);

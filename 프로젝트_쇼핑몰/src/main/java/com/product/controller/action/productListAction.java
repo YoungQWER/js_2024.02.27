@@ -6,10 +6,9 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.Session;
-
 import com.product.dao.ShoppingDAO;
 import com.product.dto.ShoppingVO;
+
 
 
 public class productListAction implements Action{
@@ -24,13 +23,14 @@ public class productListAction implements Action{
 		   ShoppingDAO bDao = ShoppingDAO.getInstance();
 		   List<ShoppingVO> product = bDao.selectAllproduct();
 		   
-		   System.out.println("product : " + product);
-		  
+		   System.out.println("product >> " + product);
+				
 		   request.setAttribute("productlist", product);
 		   
 		   request.getRequestDispatcher(url).forward(request, response);
 		   
-		   
+
+
 	}
 
 }

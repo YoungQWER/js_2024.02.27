@@ -46,7 +46,6 @@
                <td>${product.productDescription}</td>
                <td>    </td>
                <td>${product.productdate}</td>
-
             </tr>
          </c:forEach>
       </table>

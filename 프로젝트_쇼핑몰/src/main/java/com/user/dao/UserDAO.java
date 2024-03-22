@@ -13,6 +13,8 @@ import com.user.dto.AddressVO;
 import com.user.dto.NonUserVO;
 import com.user.dto.UserVO;
 
+import util.DBManager;
+
 public class UserDAO {
 
 	private static UserDAO instance = new UserDAO();
@@ -26,49 +28,49 @@ public class UserDAO {
 	public static UserDAO getInstance() {
 		return instance;
 	}
-	
-	private Connection getConnection() {
-		Connection conn = null;
-		try {
-			Context initContext = new InitialContext();
-			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
-			conn = ds.getConnection();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return conn;
-	}
-	
-	private void close(Connection con, Statement stmt, ResultSet rs) {
-		try {
-			if(rs != null) rs.close();
-			if(stmt != null) stmt.close();
-			if(con != null) con.close();
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	private void close(Connection con, Statement stmt) {
-		try {
-			if(stmt != null) stmt.close();
-			if(con != null) con.close();
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
+//	
+//	private Connection getConnection() {
+//		Connection conn = null;
+//		try {
+//			Context initContext = new InitialContext();
+//			Context envContext  = (Context)initContext.lookup("java:/comp/env");
+//			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
+//			conn = ds.getConnection();
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return conn;
+//	}
+//	
+//	private void close(Connection con, Statement stmt, ResultSet rs) {
+//		try {
+//			if(rs != null) rs.close();
+//			if(stmt != null) stmt.close();
+//			if(con != null) con.close();
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	private void close(Connection con, Statement stmt) {
+//		try {
+//			if(stmt != null) stmt.close();
+//			if(con != null) con.close();
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+//	
 	public int join(UserVO vo) {
 		int result = -1;
 		
 		String sql = "insert into users values(?,?,?,?,?,?,?,?)";
 
 		try {
-			con = getConnection();			
+			con = DBManager.getConnection();			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getUserid());
 			pstmt.setString(2, vo.getPwd());
@@ -83,12 +85,8 @@ public class UserDAO {
 			result = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
-		}finally {
-			try {
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+		}finally {		
+			DBManager.close(con, pstmt, rs);
 		}
 		return result;
 	}
@@ -101,7 +99,7 @@ public class UserDAO {
 				+ "nickname,?,?,?)";
 				
 		try {
-			con = getConnection();			
+			con = DBManager.getConnection();			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(6, vo.getAddress());
 			pstmt.setString(7, vo.getAddressDetail());
@@ -111,11 +109,7 @@ public class UserDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			try {
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+			DBManager.close(con, pstmt, rs);
 		}
 		return result;
 	}
@@ -127,7 +121,7 @@ public class UserDAO {
 		String sql = "insert into nonuser values(?,?)";
 
 		try {
-			con = getConnection();			
+			con = DBManager.getConnection();			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getPhone());
 			pstmt.setString(2, vo.getEmail());
@@ -136,11 +130,7 @@ public class UserDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			try {
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+			DBManager.close(con, pstmt, rs);
 		}
 		return result;
 	}
@@ -152,7 +142,7 @@ public class UserDAO {
 		String sql = "select pwd from users where userid = ? ";
 		
 		try {
-			con = getConnection();
+			con = DBManager.getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			
@@ -170,13 +160,7 @@ public class UserDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
-			try {
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(con != null) con.close();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+			DBManager.close(con, pstmt, rs);
 		}
 		
 		return result;
@@ -189,7 +173,7 @@ public class UserDAO {
 		UserVO vo = new UserVO();
 		
 		try {
-			con = getConnection();
+			con = DBManager.getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			
@@ -211,13 +195,7 @@ public class UserDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally{
-			try {
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(con != null) con.close();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+			DBManager.close(con, pstmt, rs);
 		}
 		
 		return vo;
@@ -230,7 +208,7 @@ public class UserDAO {
 		String sql = "select userid from users where userid = ?";
 		
 		try {
-			con = getConnection();
+			con = DBManager.getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -244,13 +222,7 @@ public class UserDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			try {
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(con != null) con.close();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+			DBManager.close(con, pstmt, rs);
 		}
 		return result;
 	}

@@ -41,7 +41,6 @@ public List<ShoppingVO> selectAllproduct(){
 	try {
 		con = DBManager.getConnection();
 		pstmt = con.prepareStatement(sql);
-		System.out.println("sql : " + sql);
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
 			ShoppingVO vo = new ShoppingVO();
@@ -53,8 +52,6 @@ public List<ShoppingVO> selectAllproduct(){
 			vo.setProductStock(rs.getInt("productStock"));
 			vo.setProductDescription(rs.getString("ProductDescription"));
 			vo.setProductdate(rs.getTimestamp("productdate"));
-			
-			
 			
 			list.add(vo);
 		}
