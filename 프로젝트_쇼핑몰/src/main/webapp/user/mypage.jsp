@@ -13,7 +13,7 @@
 		<table border="1">
 			<tr>
 				<td>이름</td>
-				 <td><input type="text" name="username" size="20" value="${id}"></td>
+				 <td><input type="text" name="userid" size="20" value="${id}"></td>
 			</tr>
 			<tr>
 				<td>주소</td>

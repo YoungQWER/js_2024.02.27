@@ -33,14 +33,17 @@ public class MypageAction implements Action {
 		System.out.println("result>>> : " + result);
 		HttpSession session = request.getSession();
 
-		if(result == 1) {
-			session.setAttribute("address", address);
-			request.setAttribute("message", "마이페이지 등록했습니다.");
-		}else {
-			request.setAttribute("message", "마이페이지 등록에 실패했습니다.");
-		}
-	
-		request.getRequestDispatcher("CommandServlet?command=main")
+		session.setAttribute("address", address);
+		
+//
+//		if(result == 1) {
+//			session.setAttribute("address", address);
+//			request.setAttribute("message", "마이페이지 등록했습니다.");
+//		}else {
+//			request.setAttribute("message", "마이페이지 등록에 실패했습니다.");
+//		}
+//	
+		request.getRequestDispatcher("ShoppingServlet?command=product_list")
 			.forward(request, response);
 	}
 

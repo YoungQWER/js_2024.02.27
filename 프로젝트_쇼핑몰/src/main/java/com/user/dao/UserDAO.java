@@ -95,17 +95,19 @@ public class UserDAO {
 
 		int result = -1;
 		
-	String sql = "insert into address values(userid, addressid, username, adminCheck, nickname, "
-				+ "nickname,?,?,?)";
+	String sql = "insert into address values(userid, addressid, username, admincheck,"
+			+ "nickname , ? ,? ,?)";
 				
 		try {
 			con = DBManager.getConnection();			
 			pstmt = con.prepareStatement(sql);
+
 			pstmt.setString(6, vo.getAddress());
 			pstmt.setString(7, vo.getAddressDetail());
 			pstmt.setString(8, vo.getDeliveryRequest());
 			
 			result = pstmt.executeUpdate();
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
