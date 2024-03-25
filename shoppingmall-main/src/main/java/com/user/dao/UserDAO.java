@@ -32,11 +32,13 @@ public class UserDAO {
 	public int join(UserVO vo) {
 		int result = -1;
 		
-		String sql = "insert into users values(address_no, ?,?,?,?,?,?,?,?)";
+		String sql = "insert into users values(?,?,?,?,?,?,?,?,?)";
 
 		try {
 			con = DBManager.getConnection();			
 			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, vo.getUser_no());
 			pstmt.setString(2, vo.getUserid());
 			pstmt.setString(3, vo.getPwd());
 			pstmt.setString(4, vo.getUsername());
