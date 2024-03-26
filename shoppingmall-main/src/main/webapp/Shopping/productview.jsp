@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>가격</th>
-				<td colspan="3">${product.productPrice }</td>
+				<td colspan="3">${product.productPrice}</td>
 			</tr>
 			<tr>
 				<th>내용</th>

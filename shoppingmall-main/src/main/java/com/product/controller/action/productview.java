@@ -26,6 +26,7 @@ public class productview implements Action {
 	
 	request.setAttribute("product", vo);
 	
+	System.out.println(" vo >:" + vo);
 	
 	String url = "Shopping/productview.jsp";
 	

@@ -9,7 +9,7 @@ import lombok.ToString;
 
 /*
 CREATE TABLE product (
-    product_Key INT PRIMARY KEY,
+    productKey INT PRIMARY KEY,
     productcategory VARCHAR(50) NOT NULL,
     productName VARCHAR(50) NOT NULL,
     productPrice INT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE product (
 @Getter
 @ToString
 public class ShoppingVO {
-	private int product_Key;
+	private int productKey;
 	private String productCategory;
 	private String productName;
 	private int productPrice;
