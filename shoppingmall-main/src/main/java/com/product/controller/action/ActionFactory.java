@@ -18,9 +18,13 @@ public class ActionFactory {
 		      action = new productListAction();
 		}else if(command.equals("product_view")) {
 			  action = new productview();
-		}else if(command.equals("")){
-			  
+		}else if(command.equals("product_order")){
+			  action = new ProductOrderAction();
+		}else if(command.equals("product_order_form")){
+			  action = new ProductOrderForm();
 		}
+		
+		
 		return action;
 	}
 
