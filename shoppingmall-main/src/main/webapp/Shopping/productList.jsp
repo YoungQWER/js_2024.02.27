@@ -32,7 +32,7 @@
          </tr>
          <c:forEach var="product" items="${productlist}">
             <tr class="record">
-               <td>${product.productKey}</td>
+               <td>${product.product_Key}</td>
                <td>    </td>
                <td>${product.productCategory}</td>
                <td>    </td>
