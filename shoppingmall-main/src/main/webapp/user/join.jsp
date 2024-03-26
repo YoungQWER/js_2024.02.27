@@ -15,7 +15,7 @@
       <table border="1">
          <tr>
             <td>아이디</td>
-            <td><input type="text" name="id" size="20"  id="id">*
+            <td><input type="text" name="userid" size="20"  id="id">*
             <input type="hidden" name="reid" size="20">
             <input type="button" value="중복 체크" onclick="idCheck()"></td>
          </tr>

@@ -34,7 +34,7 @@ public class UserLoginAction implements Action {
 		
 		if(result  == 1) {
 			session.setAttribute("userList", vo);
-			session.setAttribute("id", id);
+			session.setAttribute("userid", id);
 			request.setAttribute("message", "로그인 성공했습니다.");
 			url = "user/main.jsp";
 		}else if(result == 0) {

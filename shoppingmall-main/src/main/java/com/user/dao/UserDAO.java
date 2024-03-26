@@ -3,6 +3,7 @@ package com.user.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.naming.Context;
@@ -32,21 +33,19 @@ public class UserDAO {
 	public int join(UserVO vo) {
 		int result = -1;
 		
-		String sql = "insert into users values(?,?,?,?,?,?,?,?,?)";
-
+	    String sql = "INSERT INTO users VALUES (user_no.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			con = DBManager.getConnection();			
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setInt(1, vo.getUser_no());
-			pstmt.setString(2, vo.getUserid());
-			pstmt.setString(3, vo.getPwd());
-			pstmt.setString(4, vo.getUsername());
-			pstmt.setString(5, vo.getEmail());
-			pstmt.setInt(6, vo.getPhone());
-			pstmt.setInt(7, vo.getJumin());
-			pstmt.setString(8, vo.getNickname());
-			pstmt.setString(9, vo.getAdminCheck());
+			pstmt.setString(1, vo.getUserid());
+			pstmt.setString(2, vo.getPwd());
+			pstmt.setString(3, vo.getUsername());
+			pstmt.setString(4, vo.getEmail());
+			pstmt.setInt(5, vo.getPhone());
+			pstmt.setInt(6, vo.getJumin());
+			pstmt.setString(7, vo.getNickname());
+			pstmt.setString(8, vo.getAdminCheck());
 			
 			
 			result = pstmt.executeUpdate();
@@ -60,25 +59,26 @@ public class UserDAO {
 	
 	public int addressinsert(AddressVO vo) {
 
-		int result = -1;
-		
-	String sql = "insert into address values(userid, addressid, username, adminCheck, nickname, "
-				+ "nickname,?,?,?)";
-				
-		try {
-			con = DBManager.getConnection();			
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(6, vo.getAddress());
-			pstmt.setString(7, vo.getAddressDetail());
-			pstmt.setString(8, vo.getDeliveryRequest());
-			
-			result = pstmt.executeUpdate();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBManager.close(con, pstmt, rs);
-		}
-		return result;
+	    int result = -1;
+
+	    String sql = "INSERT INTO address (address, address_detail, delivery_request) "
+	    		+ " VALUES (?, ?, ?)";
+
+	    try {
+	        con = DBManager.getConnection();            
+	        pstmt = con.prepareStatement(sql);
+	        pstmt.setString(1, vo.getAddress());
+	        pstmt.setString(2, vo.getAddressDetail());
+	        pstmt.setString(3, vo.getDeliveryRequest());
+
+	        result = pstmt.executeUpdate();
+
+	    } catch(SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        DBManager.close(con, pstmt, rs);
+	    }
+	    return result;
 	}
 	
 	//비회원
