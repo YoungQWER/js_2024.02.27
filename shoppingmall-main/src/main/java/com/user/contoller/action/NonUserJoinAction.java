@@ -25,6 +25,7 @@ public class NonUserJoinAction implements Action {
 		
 		UserDAO uDao = UserDAO.getInstance();
 		int result = uDao.nonUserjoin(vo);
+		System.out.println("nonuser vo : " + vo);
 	
 		HttpSession session = request.getSession();
 		

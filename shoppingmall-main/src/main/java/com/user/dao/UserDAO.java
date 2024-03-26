@@ -85,7 +85,7 @@ public class UserDAO {
 	public int nonUserjoin(NonUserVO vo) {
 		int result = -1;
 		
-		String sql = "insert into nonuser values(?,?,nonuser_no)";
+		String sql = "INSERT INTO nonuser (phone, email) VALUES (?, ?)";
 
 		try {
 			con = DBManager.getConnection();			
