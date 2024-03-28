@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.product.controller.action.Action;
-import com.product.controller.action.ActionFactory;
 import com.saeyan.dao.CartDAO;
 import com.saeyan.dao.CartDAOe;
 import com.saeyan.dto.CartDTO;
@@ -20,15 +19,8 @@ import com.saeyan.dto.CartDTO;
 public class CartController extends HttpServlet implements Action {
     private static final long serialVersionUID = 1L;
 
-    // 클라이언트의 GET 요청을 처리하는 메서드
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doPost(request, response);
-
-    }
-
-    // 클라이언트의 POST 요청을 처리하는 메서드
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+    public void execute(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
@@ -106,9 +98,8 @@ public class CartController extends HttpServlet implements Action {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+    	request.getRequestDispatcher("ShoppingServlet?command=product_Order")
+    	.forward(request, response);
     }
-
-	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
 }

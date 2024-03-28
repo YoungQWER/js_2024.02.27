@@ -1,5 +1,7 @@
 package com.product.controller.action;
 
+import com.cart.controller.CartController;
+
 public class ActionFactory {
 
 	
@@ -24,9 +26,12 @@ public class ActionFactory {
 			  action = new ProductOrderForm();
 		}else if(command.equals("bank_account")) {
 			  action = new bankAccount();
-		}
-		else if(command.equals("CartController")) {
+		}else if(command.equals("CartController")) {
 			action = new CartController();
+		}else if(command.equals("CartController")) {
+			action = new CartController();
+		}else if(command.equals("CartController_form")) {
+			action = new CartControllerForm();
 		}
 		
 		

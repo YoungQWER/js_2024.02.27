@@ -9,16 +9,15 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/shopping.css">
 <script type="text/javascript" src="script/board.js"></script>
-<title>Insert title here</title>
+<title>상품 상세보기</title>
 </head>
 <body>
 <div id="wrap" align="center">
       <h1>상품 주문</h1>
-      <form action="ShoppingServlet" name=frm method="post">
+      <form action="ShoppingServlet" name="frm" method="post">
       <input type="hidden" name="command" value="product_Order">
-
+      <input type="hidden" name="productName" value="${product.productName}">
         
-                     
       <table>
          <tr>
             <th>상품명</th>
@@ -39,19 +38,16 @@
          <tr>
             <th>내용</th>
             <td colspan="3"><pre>${product.productDescription}</pre></td>
-         </tr>
-
-         
-         
+         </tr>   
       </table>
-      <br> <br> <input type="button" value="구매하기" 
-      onclick = "location.href='ShoppingServlet?command=product_Order&productName=${product.productName}'">
-       
-      
-      
-      <input type="button" value="상품 페이지"
-         onclick="location.href='ShoppingServlet?command=product_list'">
-           </form>
+      <br><br> 	
+      <!-- 장바구니 버튼 -->
+      <input type="submit" value="구매하기">
+      <!-- 장바구니 페이지로 이동하는 버튼 -->
+      <input type="button" value="장바구니 추가하기" onclick="location.href='ShoppingServlet?command=CartController_form'">
+      <!-- 상품 목록 페이지로 이동하는 버튼 -->
+      <input type="button" value="상품 페이지" onclick="location.href='ShoppingServlet?command=product_list'">
+      </form>
    </div>
    
 </body>

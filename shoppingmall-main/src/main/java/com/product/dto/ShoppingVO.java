@@ -25,7 +25,7 @@ CREATE TABLE product (
 public class ShoppingVO {
 	private int productKey;
 	private String productCategory;
-	private String productName;
+	private String productName;           
 	private int productPrice;
 	private int productStock;
 	private String productDescription;
