@@ -1,9 +1,0 @@
-@import "../reset.css";
-@import "../common.css";
-@import "../components/header.css";
-@import "../components/footer.css";
-@import "../components/product-list.css";
-
-.main {
-  padding-top: 30px;
-}

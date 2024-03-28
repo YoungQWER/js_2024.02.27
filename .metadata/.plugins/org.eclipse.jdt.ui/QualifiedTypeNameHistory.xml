@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.saeyan.dao.ProductDAO"/>
     <fullyQualifiedTypeName name="java.lang.ExceptionInInitializerError"/>
     <fullyQualifiedTypeName name="javax.naming.NamingException"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="lombok.ToString"/>
     <fullyQualifiedTypeName name="com.product.dto.ShoppingVO"/>
     <fullyQualifiedTypeName name="com.product.dao.ShoppingDAO"/>
+    <fullyQualifiedTypeName name="com.cart.controller.CartController"/>
 </qualifiedTypeNameHistroy>
