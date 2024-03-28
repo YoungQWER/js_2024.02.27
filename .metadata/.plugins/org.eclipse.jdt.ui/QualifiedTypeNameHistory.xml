@@ -47,17 +47,17 @@
     <fullyQualifiedTypeName name="com.seayan.dto.ShoppingMallVO"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Setter"/>
-    <fullyQualifiedTypeName name="com.product.dao.ShoppingDAO"/>
     <fullyQualifiedTypeName name="com.product.controller.action.ActionFactory"/>
     <fullyQualifiedTypeName name="com.product.controller.action.Action"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.product.dto.ShoppingVO"/>
-    <fullyQualifiedTypeName name="com.saeyan.dto.ProductVO"/>
     <fullyQualifiedTypeName name="com.cart.dto.CartDTO"/>
     <fullyQualifiedTypeName name="com.cart.dao.CartDAO"/>
     <fullyQualifiedTypeName name="com.cart.cartservice.CartService"/>
     <fullyQualifiedTypeName name="CartService.CartService"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="lombok.ToString"/>
     <fullyQualifiedTypeName name="com.cart.controller.CartService"/>
+    <fullyQualifiedTypeName name="com.saeyan.dto.ProductVO"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="com.product.dto.ShoppingVO"/>
+    <fullyQualifiedTypeName name="com.product.dao.ShoppingDAO"/>
 </qualifiedTypeNameHistroy>

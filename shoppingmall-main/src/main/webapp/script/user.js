@@ -79,3 +79,31 @@ function joinCheck(){
 
 	return true;
 }
+function refundCheck() {
+    console.log("refundCheck");
+    
+    if (document.frm2.product.value.length == 0) {
+        alert("상품명을 입력해주세요");
+        frm2.product.focus();
+        return false;
+    }
+    if (document.frm2.userid.value.length == 0) {
+        alert("아이디를 입력해주세요");
+        frm2.userid.focus();
+        return false;
+    }
+    if (document.frm2.account.value.length == 0) {
+        alert("환불 계좌를 입력해주세요");
+        frm2.account.focus();
+        return false;
+    }
+    if (document.frm2.reason.value.length == 0) {
+        alert("사유를 입력해주세요");
+        frm2.reason.focus();
+        return false;
+    }
+    return true;
+}
+
+
+

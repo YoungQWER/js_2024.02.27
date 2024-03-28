@@ -4,6 +4,7 @@ package com.product.dto;
 
 
 import lombok.Getter;
+
 import lombok.Setter;
 import lombok.ToString;
 
@@ -29,6 +30,7 @@ public class ShoppingVO {
 	private int productStock;
 	private String productDescription;
 	private java.sql.Timestamp productdate;
+
 
 }
 	

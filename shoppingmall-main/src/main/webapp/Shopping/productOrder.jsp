@@ -1,47 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/shopping.css">
+
 <script type="text/javascript" src="script/board.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 <div id="wrap" align="center">
-      <h1>상품 주문</h1>
+      <h1>무통장 입금만 가능합니다</h1>  
       <form action="ShoppingServlet" name=frm method="post">
-      <input type="hidden" name="command" value="product_order">
-      <table>
+      <input type="hidden" name="command" value="product_Order">
+      <table>  
          <tr>
-            <th>상품명</th>
+     <th>상품명</th>
             <td>${product.productName}</td>
-            <th>카테고리</th>
-            <td>${product.productCategory}</td>
-         </tr>
-         <tr>
-            <th>등록일</th>
-            <td><fmt:formatDate value="${product.productdate}" /></td>
-            <th>남은수량</th>
-            <td>${product.productStock}</td>
-         </tr>
+       </tr>
          <tr>
             <th>가격</th>
-            <td colspan="3">${product.productPrice }</td>
+            <td colspan="3">${product.productPrice }원</td>
          </tr>
-         <tr>
-            <th>내용</th>
-            <td colspan="3"><pre>${product.productDescription }</pre></td>
-         </tr>
-         
-         
-         
-      </table>
-      <br> <br> <input type="submit" value="구매하기">
-       
+         <c:forEach var="product" items="${productlist}">
+            <tr class="record">
+               <td>${product.productKey}</td>
+               <td>    </td>
+               <td>${product.productCategory}</td>
       
+            </tr>
+            
+         </c:forEach>
+         
+         <tr>
+            <th>은행</th>
+            <td>입금하실 은행을 선택해주세요.</td>
+
+         </tr>
+          <c:forEach var="bank" items="${bankList}">
+            <tr class="record">
+                <td><a href = "ShoppingServlet?command=bank_account&bankName=${bank.bankName}">
+               ${bank.bankName}</a></td>
+               <td>${bank.accountNum}</td>
+               
+              
+              
+            </tr>
+         </c:forEach>
+
+
+</table>
       
       <input type="button" value="상품 페이지"
          onclick="location.href='ShoppingServlet?command=product_list'">

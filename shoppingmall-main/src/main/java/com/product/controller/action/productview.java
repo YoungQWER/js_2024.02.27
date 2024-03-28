@@ -1,14 +1,15 @@
 package com.product.controller.action;
 
 import java.io.IOException;
-
-
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.product.dao.BankAccountDAO;
 import com.product.dao.ShoppingDAO;
+import com.product.dto.BankAccountVO;
 import com.product.dto.ShoppingVO;
 
 import oracle.jdbc.rowset.OracleCachedRowSetWriter;
@@ -25,7 +26,7 @@ public class productview implements Action {
 	ShoppingVO vo = ShoppingDAO.getInstance().selectOneByName(productName);
 	
 	request.setAttribute("product", vo);
-	
+
 	System.out.println(" vo >:" + vo);
 	
 	String url = "Shopping/productview.jsp";

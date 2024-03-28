@@ -104,37 +104,5 @@ public class ShoppingDAO {
 		   return vo;
 		   
 		}
-
-
-
-
-
-
-
-//공지사항 추가
-public void insertadminnotion(ShoppingVO vo) {
-	
-	String sql = "insert into adminnotion (" + "num, writer, title, content)"
-	+ "values(adminnotion_seq.nextval, ?, ?, ?)";
-	
-	Connection con = null;
-	PreparedStatement pstmt = null;
-
-   try {
-	   con =DBManager.getConnection();
-	   pstmt = con.prepareStatement(sql);
-	   
-	   
-	   
-	   pstmt.executeUpdate();
-	   
-   }catch (Exception e) {
-	e.printStackTrace();
-}finally {
-	DBManager.close(con, pstmt);
+		
 }
-
-}
-
-}
-

@@ -1,6 +1,5 @@
 package com.user.contoller.action;
 
-import com.cart.controller.CartService;
 
 public class ActionFactory {
 	
@@ -43,8 +42,8 @@ public class ActionFactory {
 			action = new RefundAction();
 		}else if(command.equals("refund_form")) {
 			action = new Refundform();
-		}else if(command.equals("CartService")) {
-			action = new CartService();
+		}else if(command.equals("cart_form")) {
+			action = new Cartform();
 		}
 		
 		
