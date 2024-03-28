@@ -22,10 +22,7 @@
     <input type="hidden" name="command" value="product_list">
     <input type="submit" value="상품페이지">
 </form>
-<form action="CommandServlet" method="post">
-    <input type="hidden" name="command" value="cart_form">
-    <input type="submit" value="장바구니">
-</form>
+
 
 
 

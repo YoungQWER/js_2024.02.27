@@ -44,8 +44,6 @@
       <!-- 장바구니 버튼 -->
       <input type="submit" value="구매하기">
       <!-- 장바구니 페이지로 이동하는 버튼 -->
-      <input type="button" value="장바구니 추가하기" onclick="location.href='ShoppingServlet?command=CartController_form'">
-      <!-- 상품 목록 페이지로 이동하는 버튼 -->
       <input type="button" value="상품 페이지" onclick="location.href='ShoppingServlet?command=product_list'">
       </form>
    </div>
