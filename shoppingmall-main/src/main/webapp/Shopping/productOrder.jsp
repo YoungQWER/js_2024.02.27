@@ -14,7 +14,8 @@
 <div id="wrap" align="center">
       <h1>무통장 입금만 가능합니다</h1>  
       <form action="ShoppingServlet" name=frm method="post">
-      <input type="hidden" name="command" value="product_Order">
+      <input type="hidden" name="command" value="bank_account">
+      <input type="hidden" name="bankName" value="${bank.bankName}">      
       <table>  
          <tr>
      <th>상품명</th>
@@ -36,20 +37,16 @@
          
          <tr>
             <th>은행</th>
-            <td>입금하실 은행을 선택해주세요.</td>
+            <td>원하시는 계좌에 입금하시면 입금확인 후 바로 배송합니다.</td>
 
          </tr>
           <c:forEach var="bank" items="${bankList}">
             <tr class="record">
-                <td><a href = "ShoppingServlet?command=bank_account&bankName=${bank.bankName}">
-               ${bank.bankName}</a></td>
+                <td> ${bank.bankName}</td>
                <td>${bank.accountNum}</td>
                
-              
-              
             </tr>
          </c:forEach>
-
 
 </table>
       

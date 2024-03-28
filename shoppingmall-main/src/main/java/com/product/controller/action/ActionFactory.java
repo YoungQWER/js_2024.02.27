@@ -26,13 +26,8 @@ public class ActionFactory {
 			  action = new ProductOrderForm();
 		}else if(command.equals("bank_account")) {
 			  action = new bankAccount();
-		}else if(command.equals("CartController")) {
-			action = new CartController();
-		}else if(command.equals("CartController")) {
-			action = new CartController();
-		}else if(command.equals("CartController_form")) {
-			action = new CartControllerForm();
 		}
+		
 		
 		
 		return action;

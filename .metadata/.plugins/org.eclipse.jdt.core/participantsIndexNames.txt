@@ -39,6 +39,8 @@ C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\151205212.inde
 \ÇÁ·ÎÁ§Æ®_È¨¼îÇÎ\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1565839843.index
 \¼îÇÎ¸ô\src\main\java
+C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3976620086.index
+\shoppingmall-main\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1298389373.index
 \Shopping_¿ìÁÖ¾¾\src\main\java
 C:\java\Jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1614289081.index

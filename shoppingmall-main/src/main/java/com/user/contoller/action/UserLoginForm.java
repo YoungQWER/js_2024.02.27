@@ -11,7 +11,7 @@ public class UserLoginForm implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.getRequestDispatcher("user/login.jsp").forward(request, response);
+		request.getRequestDispatcher("login.html").forward(request, response);
 	}
 
 }

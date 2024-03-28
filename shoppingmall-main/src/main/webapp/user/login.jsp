@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="script/user.js"></script>
+    <link rel="stylesheet" href="Homepage/css/pages/login.css" />
 </head>
 <body>
 	<h2>로그인</h2> 

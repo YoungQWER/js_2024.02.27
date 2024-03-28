@@ -61,20 +61,20 @@ public class UserDAO {
 
 	    int result = -1;
 
-	    String sql = "INSERT INTO address (userid, address, addressDetail, deliveryRequest) VALUES (?, ?, ?, ?)";
+	    String sql = "INSERT INTO address (address, address_detail, delivery_request) "
+	    		+ " VALUES (?, ?, ?)";
 
 	    try {
 	        con = DBManager.getConnection();            
 	        pstmt = con.prepareStatement(sql);
-	        pstmt.setString(1, vo.getUserid());
-	        pstmt.setString(2, vo.getAddress());
-	        pstmt.setString(3, vo.getAddressDetail());
-	        pstmt.setString(4, vo.getDeliveryRequest());
+	        pstmt.setString(1, vo.getAddress());
+	        pstmt.setString(2, vo.getAddressDetail());
+	        pstmt.setString(3, vo.getDeliveryRequest());
 
 	        result = pstmt.executeUpdate();
 
 	    } catch(SQLException e) {
-	        e.printStackTrace(); // 예외를 출력하여 확인
+	        e.printStackTrace();
 	    } finally {
 	        DBManager.close(con, pstmt, rs);
 	    }

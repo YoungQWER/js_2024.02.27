@@ -21,7 +21,7 @@ public class UserLoginAction implements Action {
 //		System.out.println("id : " + id);
 //		System.out.println("pwd : " + pwd);
 		UserDAO uDao = UserDAO.getInstance();
-		String url = "CommandServlet?command=user_login_form";
+		String url = "CommandServlet?command=main_form";
 
 		int result = uDao.idCheck(id, pwd);
 //		System.out.println("result : " + result);
