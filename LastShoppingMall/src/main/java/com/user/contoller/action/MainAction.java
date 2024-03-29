@@ -21,13 +21,13 @@ public class MainAction implements Action {
         
         try {
             // JDBC 드라이버 로드
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("oracle.jdbc.driver.OracleDriver");
             
             // 데이터베이스 연결
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "username", "password");
             
             // 쿼리 작성 및 실행
-            String query = "SELECT * FROM user_table";
+            String query = "SELECT * FROM users";
             pstmt = conn.prepareStatement(query);
             rs = pstmt.executeQuery();
             
@@ -56,3 +56,4 @@ public class MainAction implements Action {
         }
     }
 }
+

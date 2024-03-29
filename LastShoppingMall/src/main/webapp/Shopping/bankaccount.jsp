@@ -25,14 +25,11 @@
            <th>    </th>
            <th>계좌번호</th>
          </tr>
-          <c:forEach var="bank" items="${bankaccount}">
-            <tr class="record">
-               <td>${bankaccount.bankName}</td>
+               <td>국민</td>
                <td>    </td>
-               <td>${bankaccount.accountNum}</td>
+               <td>1234-567-1234</td>
                <td>    </td>
                </tr>
-          </c:forEach>
          
          
       </table>

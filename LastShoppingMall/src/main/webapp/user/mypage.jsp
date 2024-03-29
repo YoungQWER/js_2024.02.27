@@ -17,7 +17,7 @@
 			</tr>
 			<tr>
 				<td>주소</td>
-				 <td><input type="text" name="address" size="100"></td>
+				 <td><input type="text" name="address" size="50"></td>
 			</tr>
 			<tr>
 				<td>상세주소</td>
@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td>배송시 요청사항</td>
-				 <td><input type="text" name="deliveryRequest" size="200"></td>
+				 <td><input type="text" name="deliveryRequest" size="50"></td>
 			</tr>
 			<tr>
 		        <td colspan="2" align="center"><input type="submit" value="확인">
