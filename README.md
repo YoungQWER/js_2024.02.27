@@ -10,7 +10,7 @@ preferences > enc >  workspace, web 전체, XML  을 UTF-8
 
 dynamic web project > 버전9.0확인 > next후 generate 체크
 
-response.setContentType("text/html; charset=utf-8");    >> 필수_없으면 한글깨진다.
+response.setContentType("text/html; charset=utf-8");    >> 필수_ 없으면 한글깨진다.
 
 # 주요 용어
 
@@ -32,5 +32,4 @@ servlet : ( server + applet ) 서블릿
 ![3](./image/3.png)
 
 # forward
-![4](./image/4
-서블릿 servlet ( server + applet ).png)
+![4](./image/4.png)
