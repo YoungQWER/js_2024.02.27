@@ -1,4 +1,4 @@
-![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/10dad862-9764-4ed6-adaf-eb331b4c59c8/%EC%BA%A1%EC%B2%98.png)
+![1](./image/1.png)
 
 ![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/124b5b65-f43d-4217-95e5-ad45c1513305/%EC%BA%A1%EC%B2%98.png)
 
