@@ -1,30 +1,36 @@
+# 설치/설정
+
+tomcat download ( tomcat 9 / 64비트.zip)
+
+sqldeveloper : 자바폴더안에  설치
+
+이클립스 > 윈도우 > preferences > runtime > apache
+
+preferences > enc >  workspace, web 전체, XML  을 UTF-8
+
+dynamic web project > 버전9.0확인 > next후 generate 체크
+
+response.setContentType("text/html; charset=utf-8");    >> 필수_없으면 한글깨진다.
+
+# 주요 용어
+
+전송 방식
 ![1](./image/1.png)
 
-![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/124b5b65-f43d-4217-95e5-ad45c1513305/%EC%BA%A1%EC%B2%98.png)
+request : 여러가지 메소드
 
-출력 : <%=출력 >
+response : 클라이언트의 정보
 
-# forward 방식
+servlet : ( server + applet ) 서블릿
 
-![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/3bf55b23-81b0-4143-a51f-6bff9b8561bb/%EC%BA%A1%EC%B2%98.png)
 
-RequestDispatcher dispatcher = request.getRequestDispatcher("**addition03.jsp**");
-dispatcher.forward(request, response);    //addition03.jsp에서 가져온다.
+# 구조
+![2](./image/2.png)
 
-![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/b15cee6c-1e2a-45ca-bd8a-ca72b1079328/%EC%BA%A1%EC%B2%98.png)
 
-# 서블릿 servlet ( server + applet )
+# 출력
+![3](./image/3.png)
 
-자바를 이용하여 웹에서 실행되는 프로그램
-
-![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/2c7500dc-e194-4498-8b10-96bb10f0c7ae/%EC%BA%A1%EC%B2%98.png)
-
-response.setContentType("text/html; charset=utf-8");    >>필수 없으면 한글깨진다.
-
-![캡처.PNG](https://prod-files-secure.s3.us-west-2.amazonaws.com/3dd11b2b-5dab-4a37-95df-d30bba5e54a8/5df0896a-1263-4926-81a9-ebdcc85e4cb9/%EC%BA%A1%EC%B2%98.png)
-
-/Test 어노테이션으로 URL 매핑
-
-실제 서블릿 클래스 이름을 공개하지 않기 위해서
-
-( http://localhost8181/web-study-02/Test )
+# forward
+![4](./image/4
+서블릿 servlet ( server + applet ).png)
